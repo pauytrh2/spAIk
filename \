@@ -17,12 +17,12 @@
 
         #blocklyDiv {
             height: 100%;
-            width: 70%;
+            width: 70%; /* left side */
         }
 
         #outputDiv {
             height: 100%;
-            width: 30%;
+            width: 30%; /* right side */
             border-left: 2px solid #ccc;
             padding: 10px;
             box-sizing: border-box;
@@ -36,9 +36,6 @@
 
 <body>
     <div id="blocklyDiv"></div>
-
-    <div id="outputDiv">Output will appear here...</div>
-
     <xml id="toolbox" style="display: none">
 
         <category name="Logic" colour="210">

@@ -18,9 +18,10 @@ async function runCode() {
     try {
         let result = await pyodide.runPythonAsync(code);
         console.log("Result:", result);
+        document.getElementById("outputDiv").textContent = result ?? "None";
     } catch (err) {
         console.error(err);
-        alert("Error: " + err);
+        document.getElementById("outputDiv").textContent = err;
     }
 }
 
