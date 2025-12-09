@@ -9,6 +9,7 @@
         body {
             height: 100%;
             margin: 0;
+            background-color: #808080;
         }
 
         body {
@@ -20,16 +21,20 @@
             width: 70%;
         }
 
-        #outputDiv {
+        #stage {
             height: 100%;
             width: 30%;
             border-left: 2px solid #ccc;
-            padding: 10px;
-            box-sizing: border-box;
-            background-color: #f5f5f5;
-            overflow-y: auto;
-            font-family: monospace;
-            white-space: pre-wrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -37,10 +42,9 @@
 <body>
     <div id="blocklyDiv"></div>
 
-    <div id="outputDiv">Output will appear here...</div>
+    <div id="stage"></div>
 
     <xml id="toolbox" style="display: none">
-
         <category name="Logic" colour="210">
             <block type="controls_if"></block>
             <block type="logic_compare"></block>
@@ -114,16 +118,6 @@
     <script src="node_modules/blockly/msg/en.js"></script>
 
     <script src="https://cdn.jsdelivr.net/pyodide/v0.26.0/full/pyodide.js"></script>
-    <script>
-        let pyodide;
-
-        async function initPyodide() {
-            pyodide = await loadPyodide();
-            console.log("Pyodide loaded!");
-        }
-
-        initPyodide();
-    </script>
 
     <script type="module" src="./main.js"></script>
 </body>
